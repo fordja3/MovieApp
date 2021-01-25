@@ -1,6 +1,6 @@
 <div>
     <div *ngIf="currentTutorial.id" class="edit-form">
-      <h4>Tutorial</h4>
+      <h4>Movie Details</h4>
       <form>
         <div class="form-group">
           <label for="title">Title</label>
@@ -34,14 +34,14 @@
         *ngIf="currentTutorial.published"
         (click)="updatePublished(false)"
       >
-        UnPublish
+        Watch Next
       </button>
       <button
         *ngIf="!currentTutorial.published"
         class="badge badge-primary mr-2"
         (click)="updatePublished(true)"
       >
-        Publish
+        Seen It
       </button>
   
       <button class="badge badge-danger mr-2" (click)="deleteTutorial()">

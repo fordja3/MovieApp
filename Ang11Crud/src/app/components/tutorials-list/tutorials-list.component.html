@@ -30,10 +30,7 @@
           {{ tutorial.title }}
         </li>
       </ul>
-  
-      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
-        Remove All
-      </button>
+
     </div>
     <div class="col-md-6">
       <div *ngIf="currentTutorial">
@@ -48,18 +45,20 @@
         </div>
         <div>
           <label><strong>Status:</strong></label>
-          {{ currentTutorial.published ? "Published" : "Pending" }}
+          {{ currentTutorial.published ? "Seen It" : "Need to Watch" }}
         </div>
   
-        <a class="badge badge-warning" routerLink= "/tutorials/{{currentTutorial.id}}" (click)="ngOnInit()" >
+        <a class="badge-warning btn btn-sm" routerLink= "/tutorials/{{currentTutorial.id}}" (click)="ngOnInit()" >
           Edit
         </a>
-
+        <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
+          Remove All
+        </button>
       </div>
   
       <div *ngIf="!currentTutorial">
         <br />
-        <p>Please click on a Tutorial...</p>
+        <p>Please click on a Movie...</p>
       </div>
     </div>
   </div>
