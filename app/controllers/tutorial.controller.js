@@ -25,7 +25,7 @@ exports.create = (req, res) => {
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while creating the movie entry."
+            err.message || "Some error occurred while creating the Tutorial."
         });
       });
   };
@@ -42,7 +42,7 @@ exports.findAll = (req, res) => {
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while retrieving movie."
+            err.message || "Some error occurred while retrieving tutorials."
         });
       });
   };
@@ -55,13 +55,13 @@ exports.findOne = (req, res) => {
     Tutorial.findById(id)
       .then(data => {
         if (!data)
-          res.status(404).send({ message: "Not found movie with id " + id });
+          res.status(404).send({ message: "Not found Tutorial with id " + id });
         else res.send(data);
       })
       .catch(err => {
         res
           .status(500)
-          .send({ message: "Error retrieving movie with id=" + id });
+          .send({ message: "Error retrieving Tutorial with id=" + id });
       });
   };
   
@@ -80,13 +80,13 @@ exports.update = (req, res) => {
       .then(data => {
         if (!data) {
           res.status(404).send({
-            message: `Cannot update movie with id=${id}. Maybe Tutorial was not found!`
+            message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found!`
           });
-        } else res.send({ message: "Movie was updated successfully." });
+        } else res.send({ message: "Tutorial was updated successfully." });
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error updating movie with id=" + id
+          message: "Error updating Tutorial with id=" + id
         });
       });
   };
@@ -100,17 +100,17 @@ exports.delete = (req, res) => {
       .then(data => {
         if (!data) {
           res.status(404).send({
-            message: `Cannot delete movie with id=${id}. Maybe Tutorial was not found!`
+            message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`
           });
         } else {
           res.send({
-            message: "Movie was deleted successfully!"
+            message: "Tutorial was deleted successfully!"
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Could not delete movie with id=" + id
+          message: "Could not delete Tutorial with id=" + id
         });
       });
   };
@@ -121,13 +121,13 @@ exports.deleteAll = (req, res) => {
     Tutorial.deleteMany({})
       .then(data => {
         res.send({
-          message: `${data.deletedCount} Movies were deleted successfully!`
+          message: `${data.deletedCount} Tutorials were deleted successfully!`
         });
       })
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while removing all movies."
+            err.message || "Some error occurred while removing all tutorials."
         });
       });
   };
@@ -141,7 +141,7 @@ exports.findAllPublished = (req, res) => {
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while retrieving movie."
+            err.message || "Some error occurred while retrieving tutorials."
         });
       });
   };
