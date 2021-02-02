@@ -34,14 +34,14 @@
         *ngIf="currentTutorial.published"
         (click)="updatePublished(false)"
       >
-        UnPublish
+        Need to Watch
       </button>
       <button
         *ngIf="!currentTutorial.published"
         class="badge badge-primary mr-2"
         (click)="updatePublished(true)"
       >
-        Publish
+        Watched it
       </button>
   
       <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
@@ -60,7 +60,7 @@
   
     <div *ngIf="!currentTutorial.id">
       <br />
-      <p>Cannot access this Tutorial...</p>
+      <p>Cannot access this Movie...</p>
     </div>
 </div>
   
